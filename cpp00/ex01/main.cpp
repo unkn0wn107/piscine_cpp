@@ -10,32 +10,32 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <iostream>
 #include <iomanip>
-#include "PhoneBook.hpp"
+#include <iostream>
 #include "Contact.hpp"
+#include "PhoneBook.hpp"
 
 int main() {
-    PhoneBook phoneBook;
-    std::string command;
+  PhoneBook phoneBook;
+  std::string command;
 
-    while (true) {
-        std::cout << "Enter command (ADD, SEARCH, EXIT): ";
-        std::getline(std::cin, command);
+  while (true) {
+    std::cout << "Enter command (ADD, SEARCH, EXIT): ";
+    std::getline(std::cin, command);
 
-        if (std::cin.fail())
-            std::cin.clear();
-        else if (command == "ADD" || command == "add")
-            phoneBook.addContact();
-        else if (command == "SEARCH" || command == "search")
-            phoneBook.searchContact();
-        else if (command == "EXIT" || command == "exit") {
-            std::cout << "bye bye" << std::endl;
-            break;
-        }
-        else
-            std::cout << "It's a crappy phonebook - Only 3 commands exists" << std::endl;
-        std::cout << std::endl;
-    }
-    return 0;
+    if (std::cin.fail())
+      std::cin.clear();
+    else if (command == "ADD" || command == "add")
+      phoneBook.addContact();
+    else if (command == "SEARCH" || command == "search")
+      phoneBook.searchContact();
+    else if (command == "EXIT" || command == "exit") {
+      std::cout << "bye bye" << std::endl;
+      break;
+    } else
+      std::cout << "It's a crappy phonebook - Only 3 commands exists"
+                << std::endl;
+    std::cout << std::endl;
+  }
+  return 0;
 }

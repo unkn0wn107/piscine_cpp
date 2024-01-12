@@ -13,29 +13,28 @@
 #ifndef PHONEBOOK_HPP
 #define PHONEBOOK_HPP
 
+#include <iomanip>
 #include <iostream>
 #include <sstream>
-#include <iomanip>
 #include <string>
 #include "Contact.hpp"
 
-class PhoneBook
-{
-public:
-    PhoneBook();
-    ~PhoneBook();
+class PhoneBook {
+ public:
+  PhoneBook();
+  ~PhoneBook();
 
-    void addContact();
-    void searchContact();
+  void addContact();
+  void searchContact();
 
-private:
-    Contact contacts[8];
-    int currentContactIndex;
+ private:
+  Contact contacts[8];
+  int currentContactIndex;
 
-    std::string getOneFieldInput(const std::string& prompt);
-    int getContactIndexInput();
-    void displayAllContacts();
-    void displayOneContact(int index);
+  std::string getOneFieldInput(const std::string &prompt);
+  int getContactIndexInput();
+  void displayAllContacts();
+  void displayOneContact(int index);
 };
 
 #endif
