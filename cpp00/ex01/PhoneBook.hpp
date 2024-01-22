@@ -6,7 +6,7 @@
 /*   By: agaley <agaley@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/15 15:51:41 by agaley            #+#    #+#             */
-/*   Updated: 2023/12/15 19:56:08 by agaley           ###   ########lyon.fr   */
+/*   Updated: 2024/01/22 10:18:01 by agaley           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,13 +29,13 @@ public:
     void searchContact();
 
 private:
-    Contact contacts[8];
-    int currentContactIndex;
+    Contact _contacts[8];
+    int _currentContactIndex;
 
-    std::string getOneFieldInput(const std::string& prompt);
-    int getContactIndexInput();
-    void displayAllContacts();
-    void displayOneContact(int index);
+    std::string _getOneFieldInput(const std::string& prompt);
+    int _getContactIndexInput();
+    void _displayAllContacts();
+    void _displayOneContact(int index);
 };
 
 #endif

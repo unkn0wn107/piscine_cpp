@@ -6,7 +6,7 @@
 #    By: agaley <agaley@student.42lyon.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/05/07 00:01:07 by agaley            #+#    #+#              #
-#    Updated: 2023/12/15 15:13:39 by agaley           ###   ########lyon.fr    #
+#    Updated: 2024/01/22 10:17:42 by agaley           ###   ########lyon.fr    #
 #                                                                              #
 # **************************************************************************** #
 
@@ -31,7 +31,7 @@ static:					fclean
 		csbuild -c make
 
 clean:
-		rm ${OBJ}
+		rm -f ${OBJ}
 		find . -name "*.gch" -delete
 
 fclean:					clean

@@ -6,14 +6,14 @@
 /*   By: agaley <agaley@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/15 15:51:37 by agaley            #+#    #+#             */
-/*   Updated: 2023/12/15 19:55:21 by agaley           ###   ########lyon.fr   */
+/*   Updated: 2024/01/22 10:30:46 by agaley           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "PhoneBook.hpp"
 
 PhoneBook::PhoneBook() {
-    currentContactIndex = 0;
+    _currentContactIndex = 0;
 }
 
 PhoneBook::~PhoneBook() {}
@@ -21,30 +21,30 @@ PhoneBook::~PhoneBook() {}
 void PhoneBook::addContact() {
     Contact contact;
 
-    contact.setFirstName(getOneFieldInput("Enter first name: "));
-    contact.setLastName(getOneFieldInput("Enter last name: "));
-    contact.setNickname(getOneFieldInput("Enter nickname: "));
-    contact.setPhoneNumber(getOneFieldInput("Enter phone number: "));
-    contact.setDarkestSecret(getOneFieldInput("Enter darkest secret: "));
+    contact.setFirstName(_getOneFieldInput("Enter first name: "));
+    contact.setLastName(_getOneFieldInput("Enter last name: "));
+    contact.setNickname(_getOneFieldInput("Enter nickname: "));
+    contact.setPhoneNumber(_getOneFieldInput("Enter phone number: "));
+    contact.setDarkestSecret(_getOneFieldInput("Enter darkest secret: "));
 
-    contacts[currentContactIndex] = contact;
-    currentContactIndex = (currentContactIndex + 1) % 8;
+    _contacts[_currentContactIndex] = contact;
+    _currentContactIndex = (_currentContactIndex + 1) % 8;
 }
 
 void PhoneBook::searchContact() {
     int index;
 
-    if (currentContactIndex == 0) {
+    if (_currentContactIndex == 0) {
         std::cout << "No contacts in this crappy phonebook. Start by adding one :)" << std::endl;
         return;
     }
 
-    displayAllContacts();
-    index = getContactIndexInput();
-    displayOneContact(index);
+    _displayAllContacts();
+    index = _getContactIndexInput();
+    _displayOneContact(index);
 }
 
-int PhoneBook::getContactIndexInput() {
+int PhoneBook::_getContactIndexInput() {
     std::string line;
     int         index;
 
@@ -61,10 +61,10 @@ int PhoneBook::getContactIndexInput() {
         {
             std::istringstream ss(line);
             ss >> index;
-            if (index < 0 || index > currentContactIndex)
+            if (index < 0 || index >= _currentContactIndex)
             {
                 std::cout << "Contact not found." << std::endl;
-                displayAllContacts();
+                _displayAllContacts();
                 std::cout << std::endl;
             }
             else
@@ -75,7 +75,7 @@ int PhoneBook::getContactIndexInput() {
     return index;
 }
 
-std::string PhoneBook::getOneFieldInput(const std::string& prompt) {
+std::string PhoneBook::_getOneFieldInput(const std::string& prompt) {
     std::string input;
     while (true) {
         std::cout << prompt;
@@ -89,23 +89,23 @@ std::string PhoneBook::getOneFieldInput(const std::string& prompt) {
     return input;
 }
 
-void PhoneBook::displayAllContacts() {
+void PhoneBook::_displayAllContacts() {
     int i = 0;
 
     std::cout << "Your contacts list : " << std::endl;
-    while (i < currentContactIndex) {
+    while (i < _currentContactIndex) {
         std::cout << std::setw(10) << i << "|";
-        std::cout << std::setw(10) << contacts[i].getFirstName().substr(0, 9) << "|";
-        std::cout << std::setw(10) << contacts[i].getLastName().substr(0, 9) << "|";
-        std::cout << std::setw(10) << contacts[i].getNickname().substr(0, 9) << std::endl;
+        std::cout << std::setw(10) << _contacts[i].getFirstName().substr(0, 9) << "|";
+        std::cout << std::setw(10) << _contacts[i].getLastName().substr(0, 9) << "|";
+        std::cout << std::setw(10) << _contacts[i].getNickname().substr(0, 9) << std::endl;
         i++;
     }
 }
 
-void PhoneBook::displayOneContact(int index) {
-    std::cout << "First name: " << contacts[index].getFirstName() << std::endl;
-    std::cout << "Last name: " << contacts[index].getLastName() << std::endl;
-    std::cout << "Nickname: " << contacts[index].getNickname() << std::endl;
-    std::cout << "Phone number: " << contacts[index].getPhoneNumber() << std::endl;
-    std::cout << "Darkest secret: " << contacts[index].getDarkestSecret() << std::endl;
+void PhoneBook::_displayOneContact(int index) {
+    std::cout << "First name: " << _contacts[index].getFirstName() << std::endl;
+    std::cout << "Last name: " << _contacts[index].getLastName() << std::endl;
+    std::cout << "Nickname: " << _contacts[index].getNickname() << std::endl;
+    std::cout << "Phone number: " << _contacts[index].getPhoneNumber() << std::endl;
+    std::cout << "Darkest secret: " << _contacts[index].getDarkestSecret() << std::endl;
 }
