@@ -6,7 +6,7 @@
 /*   By: agaley <agaley@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/15 15:51:41 by agaley            #+#    #+#             */
-/*   Updated: 2024/01/22 10:18:01 by agaley           ###   ########lyon.fr   */
+/*   Updated: 2024/01/22 14:06:53 by agaley           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,9 @@
 #include <sstream>
 #include <iomanip>
 #include <string>
+#include <exception>
+#include <cstdlib>
+
 #include "Contact.hpp"
 
 class PhoneBook

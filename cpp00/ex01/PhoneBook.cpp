@@ -6,7 +6,7 @@
 /*   By: agaley <agaley@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/15 15:51:37 by agaley            #+#    #+#             */
-/*   Updated: 2024/01/22 10:30:46 by agaley           ###   ########lyon.fr   */
+/*   Updated: 2024/01/22 14:03:58 by agaley           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,10 +51,14 @@ int PhoneBook::_getContactIndexInput() {
     index = -1;
     while (true) {
         std::cout << "Contact to show - enter the index : ";
-        std::cin >> line;
+        std::getline(std::cin, line);
 
         if (std::cin.eof() || std::cin.fail())
+        {
             std::cin.clear();
+            std::cin.ignore();
+            exit(EXIT_FAILURE);
+        }
         else if (!std::isdigit(line[0]))
             std::cout << "Invalid index." << std::endl << std::endl;
         else
@@ -80,6 +84,11 @@ std::string PhoneBook::_getOneFieldInput(const std::string& prompt) {
     while (true) {
         std::cout << prompt;
         std::getline(std::cin, input);
+        if (std::cin.fail() || std::cin.eof()) {
+            std::cin.clear();
+            std::cin.ignore();
+            exit(EXIT_FAILURE);
+        }
         if (input.empty()) {
             std::cout << "Empty field is forbidden.\n";
             continue;
