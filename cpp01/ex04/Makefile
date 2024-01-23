@@ -6,7 +6,7 @@
 #    By: agaley <agaley@student.42lyon.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/01/13 00:57:10 by agaley            #+#    #+#              #
-#    Updated: 2024/01/13 03:01:44 by agaley           ###   ########lyon.fr    #
+#    Updated: 2024/01/23 18:19:08 by agaley           ###   ########lyon.fr    #
 #                                                                              #
 # **************************************************************************** #
 
@@ -56,5 +56,10 @@ clean:
 	find -name "*.gcda" -delete
 	find -name "*.gcno" -delete
 	find -name "*.gcov" -delete
+
+fclean:					clean
+		find . -name "${NAME}" -delete
+		rm -f test_input.txt
+		rm -f test_input.txt.replace
 
 .PHONY: all test clean coverage re
