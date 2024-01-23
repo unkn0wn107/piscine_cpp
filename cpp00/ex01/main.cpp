@@ -12,7 +12,6 @@
 
 #include <iomanip>
 #include <iostream>
-#include "Contact.hpp"
 #include "PhoneBook.hpp"
 
 int main() {
@@ -24,7 +23,11 @@ int main() {
     std::getline(std::cin, command);
 
     if (std::cin.fail())
+      exit(EXIT_FAILURE);
+    else if (std::cin.eof()) {
       std::cin.clear();
+      continue;
+    }
     else if (command == "ADD" || command == "add")
       phoneBook.addContact();
     else if (command == "SEARCH" || command == "search")
@@ -33,7 +36,7 @@ int main() {
       std::cout << "bye bye" << std::endl;
       break;
     } else
-      std::cout << "It's a crappy phonebook - Only 3 commands exists"
+      std::cout << "It's a crappy phonebook - Only 3 commands exist"
                 << std::endl;
     std::cout << std::endl;
   }

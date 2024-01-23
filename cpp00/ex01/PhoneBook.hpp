@@ -28,13 +28,14 @@ class PhoneBook {
   void searchContact();
 
  private:
-  Contact contacts[8];
-  int currentContactIndex;
+  Contact _contacts[8];
+  int  _currentContactIndex;
+  bool _isFull;
 
-  std::string getOneFieldInput(const std::string &prompt);
-  int getContactIndexInput();
-  void displayAllContacts();
-  void displayOneContact(int index);
+  std::string _getOneFieldInput(const std::string &prompt);
+  int _getContactIndexInput();
+  void _displayAllContacts();
+  void _displayOneContact(int index);
 };
 
 #endif
