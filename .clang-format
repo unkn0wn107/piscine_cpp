@@ -30,9 +30,7 @@ AlignConsecutiveMacros:
   PadOperators:    false
 AlignEscapedNewlines: Left
 AlignOperands:   Align
-AlignTrailingComments:
-  Kind:            Always
-  OverEmptyLines:  0
+AlignTrailingComments: true
 AllowAllArgumentsOnNextLine: true
 AllowAllParametersOfDeclarationOnNextLine: false
 AllowShortBlocksOnASingleLine: Never
@@ -70,13 +68,12 @@ BraceWrapping:
   SplitEmptyFunction: true
   SplitEmptyRecord: true
   SplitEmptyNamespace: true
-BreakAfterAttributes: Never
 BreakAfterJavaFieldAnnotations: false
 BreakArrays:     true
 BreakBeforeBinaryOperators: None
 BreakBeforeConceptDeclarations: Always
 BreakBeforeBraces: Attach
-BreakBeforeInlineASMColon: OnlyMultiline
+#BreakBeforeInlineASMColon: OnlyMultiline
 BreakBeforeTernaryOperators: true
 BreakConstructorInitializers: BeforeColon
 BreakInheritanceList: BeforeColon
@@ -129,20 +126,11 @@ IndentRequiresClause: true
 IndentWidth:     2
 IndentWrappedFunctionNames: false
 InsertBraces:    false
-InsertNewlineAtEOF: false
 InsertTrailingCommas: None
-IntegerLiteralSeparator:
-  Binary:          0
-  BinaryMinDigits: 0
-  Decimal:         0
-  DecimalMinDigits: 0
-  Hex:             0
-  HexMinDigits:    0
 JavaScriptQuotes: Leave
 JavaScriptWrapImports: true
 KeepEmptyLinesAtTheStartOfBlocks: false
 LambdaBodyIndentation: Signature
-LineEnding:      DeriveLF
 MacroBlockBegin: ''
 MacroBlockEnd:   ''
 MaxEmptyLinesToKeep: 1
@@ -199,14 +187,14 @@ RawStringFormats:
 ReferenceAlignment: Pointer
 ReflowComments:  true
 RemoveBracesLLVM: false
-RemoveSemicolon: false
+#RemoveSemicolon: false
 RequiresClausePosition: OwnLine
-RequiresExpressionIndentation: OuterScope
+#RequiresExpressionIndentation: OuterScope
 SeparateDefinitionBlocks: Leave
 ShortNamespaceLines: 1
 SortIncludes:    CaseSensitive
 SortJavaStaticImport: Before
-SortUsingDeclarations: LexicographicNumeric
+SortUsingDeclarations: true
 SpaceAfterCStyleCast: false
 SpaceAfterLogicalNot: false
 SpaceAfterTemplateKeyword: true
