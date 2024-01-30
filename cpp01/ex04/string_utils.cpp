@@ -6,7 +6,7 @@
 /*   By: agaley <agaley@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/13 00:57:15 by agaley            #+#    #+#             */
-/*   Updated: 2024/01/23 17:54:47 by agaley           ###   ########lyon.fr   */
+/*   Updated: 2024/01/30 17:22:21 by agaley           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,21 +23,6 @@ void StringUtils::ReplaceAll(std::string&       str,
   size_t startPos = 0;
   while ((startPos = str.find(from, startPos)) != std::string::npos) {
     str.replace(startPos, from.length(), to);
-    startPos += from.length();
+    startPos += to.length();
   }
-}
-
-// Finds all occurrences of 'sub' in 'str' and returns the starting indices of
-// each occurrence.
-std::vector<size_t> StringUtils::FindAllOccurrences(const std::string& str,
-                                                    const std::string& sub) {
-  std::vector<size_t> occurrences;
-  size_t              startPos = 0;
-
-  while ((startPos = str.find(sub, startPos)) != std::string::npos) {
-    occurrences.push_back(startPos);
-    startPos += sub.length();
-  }
-
-  return occurrences;
 }

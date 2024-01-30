@@ -6,7 +6,7 @@
 /*   By: agaley <agaley@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/13 00:57:23 by agaley            #+#    #+#             */
-/*   Updated: 2024/01/23 17:55:15 by agaley           ###   ########lyon.fr   */
+/*   Updated: 2024/01/30 17:27:20 by agaley           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,14 +25,11 @@ void TestReplaceAll() {
   StringUtils::ReplaceAll(testStr, from, to);
   assert(testStr == "Hello World! World is big.");
   std::cout << "OK : TestReplaceAll with empty 'from' string." << std::endl;
-}
 
-void TestFindAllOccurrences() {
-  std::string         testStr = "Hello World! World is big. Hello again.";
-  std::string         sub = "Hello";
-  std::vector<size_t> occurrences =
-      StringUtils::FindAllOccurrences(testStr, sub);
-  assert(occurrences.size() == 2 && occurrences[0] == 0 &&
-         occurrences[1] == 27);
-  std::cout << "OK : TestFindAllOccurrences." << std::endl;
+  testStr = "aa";
+  from = "a";
+  to = "aa";
+  StringUtils::ReplaceAll(testStr, from, to);
+  assert(testStr == "aaaa");
+  std::cout << "OK : TestReplaceAll with duplicate." << std::endl;
 }
