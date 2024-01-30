@@ -6,7 +6,7 @@
 /*   By: agaley <agaley@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/23 14:33:02 by agaley            #+#    #+#             */
-/*   Updated: 2024/01/23 17:37:38 by agaley           ###   ########lyon.fr   */
+/*   Updated: 2024/01/30 18:03:42 by agaley           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,14 +21,27 @@ void Harl::complain(std::string level) {
     std::string levels[] = { "ERROR", "WARNING", "INFO", "DEBUG" };
 
     int j = 0;
-    while (j < 4)
-    {
-        if (levels[j++] == level)
-        {
-            int i = 0;
-            do {
-                (this->*fun[i])();
-            } while (levels[i++] != level);
+    while (j < 4 && levels[j] != level)
+        j++;
+    switch (j) {
+        case 3: {
+            (this->*fun[3])();
+            __attribute__ ((fallthrough));
+        }
+        case 2: {
+            (this->*fun[2])();
+            __attribute__ ((fallthrough));
+        }
+        case 1: {
+            (this->*fun[1])();
+            __attribute__ ((fallthrough));
+        }
+        case 0: {
+            (this->*fun[0])();
+            __attribute__ ((fallthrough));
+        }
+        default: {
+            break;
         }
     }
     if (j == 4)
