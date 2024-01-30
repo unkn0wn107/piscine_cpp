@@ -6,11 +6,11 @@
 #    By: agaley <agaley@student.42lyon.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/01/13 00:57:10 by agaley            #+#    #+#              #
-#    Updated: 2024/01/23 18:19:08 by agaley           ###   ########lyon.fr    #
+#    Updated: 2024/01/30 17:33:59 by agaley           ###   ########lyon.fr    #
 #                                                                              #
 # **************************************************************************** #
 
-CC := g++
+CC := c++
 CFLAGS := -Wall -Wextra -std=c++98 -pipe
 TEST_CFLAGS := -Wall -Wextra -std=c++98 -fprofile-arcs -ftest-coverage
 

@@ -6,7 +6,7 @@
 #    By: agaley <agaley@student.42lyon.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/05/07 00:01:07 by agaley            #+#    #+#              #
-#    Updated: 2024/01/23 14:32:25 by agaley           ###   ########lyon.fr    #
+#    Updated: 2024/01/30 17:33:59 by agaley           ###   ########lyon.fr    #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,7 +18,7 @@ OBJ = $(SRC:%.cpp=%.o)
 
 MAKEFLAGS += --no-print-directory
 CFLAGS = -Wall -Wextra -Werror -std=c++98
-CC = g++
+CC = c++
 
 all:					${NAME}
 

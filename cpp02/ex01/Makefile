@@ -6,13 +6,13 @@
 #    By: agaley <agaley@student.42lyon.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/12/15 15:51:13 by agaley            #+#    #+#              #
-#    Updated: 2024/01/24 00:48:59 by agaley           ###   ########lyon.fr    #
+#    Updated: 2024/01/30 17:33:59 by agaley           ###   ########lyon.fr    #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = fixed
 
-CC = g++
+CC = c++
 CFLAGS = -Wall -Wextra -Werror -std=c++98
 SRC = main.cpp Fixed.cpp
 OBJ = $(SRC:.cpp=.o)

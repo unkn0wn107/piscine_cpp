@@ -2,10 +2,12 @@
   "configurations": [
     {
       "name": "Linux",
-      "includePath": ["${workspaceFolder}/**"],
+      "includePath": [
+        "${workspaceFolder}/**"
+      ],
       "defines": [],
-      "compilerPath": "/usr/bin/g++",
-      "cStandard": "c17",
+      "compilerPath": "/usr/bin/c++",
+      "cStandard": "c97",
       "intelliSenseMode": "linux-gcc-x64"
     }
   ],
