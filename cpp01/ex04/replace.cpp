@@ -28,21 +28,20 @@ int Replacer::replace() {
 }
 
 void Replacer::_readFile() {
-  ErrorHandling::CheckEmptyString(filename, "Filename cannot be empty.");
-  ErrorHandling::CheckFileExists(filename, "File does not exist.");
-  fileContent = FileUtils::ReadFileContent(filename);
+  ErrChk::emptyString(filename, "Filename cannot be empty.");
+  ErrChk::fileExists(filename, "File does not exist.");
+  fileContent = File::readContent(filename);
 }
 
 void Replacer::_replaceStrings() {
-  ErrorHandling::CheckEmptyString(stringToReplace,
-                                  "String to replace cannot be empty.");
+  ErrChk::emptyString(stringToReplace, "String to replace cannot be empty.");
   if (stringToReplace != replacementString) {
-    StringUtils::ReplaceAll(fileContent, stringToReplace, replacementString);
+    StringUtils::replaceAll(fileContent, stringToReplace, replacementString);
   }
 }
 
 void Replacer::_writeFile() {
-  FileUtils::WriteFileContent(filename + ".replace", fileContent);
+  File::writeContent(filename + ".replace", fileContent);
   std::cout << "Replacement complete. Output file: " << filename << ".replace"
             << std::endl;
 }

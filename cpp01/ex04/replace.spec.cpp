@@ -6,7 +6,7 @@
 /*   By: agaley <agaley@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/13 00:57:18 by agaley            #+#    #+#             */
-/*   Updated: 2024/01/23 18:08:54 by agaley           ###   ########lyon.fr   */
+/*   Updated: 2024/01/31 01:11:52 by agaley           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ void TestReplaceFunction() {
   Replacer replacer(args);
   replacer.replace();
 
-  content = FileUtils::ReadFileContent(filename + ".replace");
+  content = File::readContent(filename + ".replace");
   assert(content.find(stringToReplace) == std::string::npos);
   assert(content.find(replacementString) != std::string::npos);
 

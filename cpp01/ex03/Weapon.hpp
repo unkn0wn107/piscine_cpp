@@ -6,7 +6,7 @@
 /*   By: agaley <agaley@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/12 18:50:52 by agaley            #+#    #+#             */
-/*   Updated: 2024/01/12 20:23:31 by agaley           ###   ########lyon.fr   */
+/*   Updated: 2024/01/31 00:55:41 by agaley           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,10 +21,10 @@ class Weapon {
   std::string type;
 
  public:
-  Weapon(std::string type);
+  Weapon(const std::string type);
   ~Weapon();
 
-  const std::string& getType();
+  const std::string& getType() const;
   void               setType(std::string type);
 };
 

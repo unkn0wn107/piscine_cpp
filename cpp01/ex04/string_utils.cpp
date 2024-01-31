@@ -6,14 +6,14 @@
 /*   By: agaley <agaley@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/13 00:57:15 by agaley            #+#    #+#             */
-/*   Updated: 2024/01/30 17:22:21 by agaley           ###   ########lyon.fr   */
+/*   Updated: 2024/01/31 01:10:33 by agaley           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "replace.hpp"
 
 // Replaces all occurrences of 'from' with 'to' in the given string 'str'.
-void StringUtils::ReplaceAll(std::string&       str,
+void StringUtils::replaceAll(std::string&       str,
                              const std::string& from,
                              const std::string& to) {
   if (from.empty()) {

@@ -6,26 +6,23 @@
 /*   By: agaley <agaley@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/13 00:56:32 by agaley            #+#    #+#             */
-/*   Updated: 2024/01/23 17:50:57 by agaley           ###   ########lyon.fr   */
+/*   Updated: 2024/01/31 01:09:16 by agaley           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "replace.hpp"
 
-void ErrorHandling::CheckEmptyString(const std::string& str,
-                                     const std::string& errorMessage) {
-  _CheckCondition(str.empty(), errorMessage);
+void ErrChk::emptyString(const std::string& str, const std::string& msg) {
+  _Condition(str.empty(), msg);
 }
 
-void ErrorHandling::CheckFileExists(const std::string& filename,
-                                    const std::string& errorMessage) {
+void ErrChk::fileExists(const std::string& filename, const std::string& msg) {
   std::ifstream file(filename.c_str());
-  _CheckCondition(!file, errorMessage);
+  _Condition(!file, msg);
 }
 
-void ErrorHandling::_CheckCondition(bool               condition,
-                                    const std::string& errorMessage) {
+void ErrChk::_Condition(const bool condition, const std::string& msg) {
   if (condition) {
-    throw std::invalid_argument(errorMessage);
+    throw std::invalid_argument(msg);
   }
 }

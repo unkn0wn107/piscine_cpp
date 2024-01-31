@@ -6,7 +6,7 @@
 /*   By: agaley <agaley@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/12 15:26:08 by agaley            #+#    #+#             */
-/*   Updated: 2024/01/12 18:21:58 by agaley           ###   ########lyon.fr   */
+/*   Updated: 2024/01/31 00:41:35 by agaley           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ class Zombie {
   Zombie(std::string name);
   ~Zombie();
 
-  void announce(void);
+  void announce(void) const;
 };
 
 Zombie* zombieHorde(int N, std::string name);

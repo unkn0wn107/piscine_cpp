@@ -6,7 +6,7 @@
 /*   By: agaley <agaley@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/13 00:57:19 by agaley            #+#    #+#             */
-/*   Updated: 2024/01/30 17:23:19 by agaley           ###   ########lyon.fr   */
+/*   Updated: 2024/01/31 01:10:33 by agaley           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 class StringUtils {
  public:
-  static void                ReplaceAll(std::string&       str,
+  static void                replaceAll(std::string&       str,
                                         const std::string& from,
                                         const std::string& to);
 };

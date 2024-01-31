@@ -6,7 +6,7 @@
 /*   By: agaley <agaley@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/13 00:56:54 by agaley            #+#    #+#             */
-/*   Updated: 2024/01/23 18:07:24 by agaley           ###   ########lyon.fr   */
+/*   Updated: 2024/01/31 01:08:18 by agaley           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,15 +15,15 @@
 void TestWriteFileContent() {
   std::string filename = "test_input.txt";
   std::string content = "File with old to be replaced by old target keyword";
-  FileUtils::WriteFileContent(filename, content);
-  std::string writtenContent = FileUtils::ReadFileContent(filename);
+  File::writeContent(filename, content);
+  std::string writtenContent = File::readContent(filename);
   assert(content == writtenContent);
   std::cout << "OK : TestWriteFileContent" << std::endl;
 }
 
 void TestReadFileContent() {
   std::string filename = "test_input.txt";
-  std::string content = FileUtils::ReadFileContent(filename);
+  std::string content = File::readContent(filename);
   assert(!content.empty());
   std::cout << "OK : TestReadFileContent" << std::endl;
 }

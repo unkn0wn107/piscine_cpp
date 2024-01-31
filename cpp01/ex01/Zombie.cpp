@@ -6,7 +6,7 @@
 /*   By: agaley <agaley@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/12 15:26:12 by agaley            #+#    #+#             */
-/*   Updated: 2024/01/12 18:18:43 by agaley           ###   ########lyon.fr   */
+/*   Updated: 2024/01/31 00:41:45 by agaley           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,6 @@ Zombie::~Zombie() {
   std::cout << this->name << std::endl;
 }
 
-void Zombie::announce() {
+void Zombie::announce() const {
   std::cout << Zombie::name << ": BraiiiiiiinnnzzzZ..." << std::endl;
 }
