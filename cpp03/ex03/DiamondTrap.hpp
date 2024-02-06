@@ -6,7 +6,7 @@
 /*   By: agaley <agaley@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/23 20:31:02 by agaley            #+#    #+#             */
-/*   Updated: 2024/02/06 02:45:33 by agaley           ###   ########lyon.fr   */
+/*   Updated: 2024/02/06 15:28:13 by agaley           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ class DiamondTrap : public ScavTrap, public FragTrap {
   DiamondTrap& operator=(const DiamondTrap& rhs);
   ~DiamondTrap();
 
-  void whoAmI();
+  void whoAmI() const;
 };
 
 #endif

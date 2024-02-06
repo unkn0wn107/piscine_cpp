@@ -6,7 +6,7 @@
 /*   By: agaley <agaley@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/23 20:31:02 by agaley            #+#    #+#             */
-/*   Updated: 2024/02/06 01:15:52 by agaley           ###   ########lyon.fr   */
+/*   Updated: 2024/02/06 15:27:32 by agaley           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ class FragTrap : public ClapTrap {
   FragTrap& operator=(const FragTrap& rhs);
   ~FragTrap();
 
-  void highFivesGuys(void);
+  void highFivesGuys(void) const;
 };
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: agaley <agaley@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/23 20:31:12 by agaley            #+#    #+#             */
-/*   Updated: 2024/02/06 01:16:27 by agaley           ###   ########lyon.fr   */
+/*   Updated: 2024/02/06 15:27:38 by agaley           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,7 @@ void FragTrap::_initStats() {
   this->_attackDamage = 30;
 }
 
-void FragTrap::highFivesGuys(void) {
+void FragTrap::highFivesGuys(void) const {
   std::cout << this->_className << " " << this->_name
             << " is asking for High Five !" << std::endl;
 }

@@ -6,7 +6,7 @@
 /*   By: agaley <agaley@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/23 20:31:02 by agaley            #+#    #+#             */
-/*   Updated: 2024/02/06 02:35:11 by agaley           ###   ########lyon.fr   */
+/*   Updated: 2024/02/06 15:26:42 by agaley           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ class FragTrap : virtual public ClapTrap {
   FragTrap& operator=(const FragTrap& rhs);
   ~FragTrap();
 
-  void highFivesGuys(void);
+  void highFivesGuys() const;
 };
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: agaley <agaley@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/23 20:31:12 by agaley            #+#    #+#             */
-/*   Updated: 2024/02/06 02:18:13 by agaley           ###   ########lyon.fr   */
+/*   Updated: 2024/02/06 15:27:03 by agaley           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,7 @@ ScavTrap& ScavTrap::operator=(const ScavTrap& rhs) {
   return *this;
 }
 
-void ScavTrap::guardGate() {
+void ScavTrap::guardGate() const {
   std::cout << this->_className << " " << this->_name
             << " has entered Gate Keeper mode." << std::endl;
 }

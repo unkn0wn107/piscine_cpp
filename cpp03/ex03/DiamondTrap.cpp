@@ -59,7 +59,7 @@ DiamondTrap& DiamondTrap::operator=(const DiamondTrap& rhs) {
   return *this;
 }
 
-void DiamondTrap::whoAmI() {
+void DiamondTrap::whoAmI() const {
   std::cout << this->_className << " " << this->_name << " has inherited from "
-            << this->FragTrap::_name << std::endl;
+            << FragTrap::_name << std::endl;
 }

@@ -6,7 +6,7 @@
 /*   By: agaley <agaley@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/23 20:31:12 by agaley            #+#    #+#             */
-/*   Updated: 2024/02/05 11:33:16 by agaley           ###   ########lyon.fr   */
+/*   Updated: 2024/02/06 15:28:02 by agaley           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,7 @@ void ScavTrap::_initStats() {
   this->_attackDamage = 20;
 }
 
-void ScavTrap::guardGate() {
+void ScavTrap::guardGate() const {
   std::cout << this->_className << " " << this->_name
             << " has entered Gate Keeper mode." << std::endl;
 }

@@ -6,7 +6,7 @@
 /*   By: agaley <agaley@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/23 20:31:02 by agaley            #+#    #+#             */
-/*   Updated: 2024/02/06 01:13:28 by agaley           ###   ########lyon.fr   */
+/*   Updated: 2024/02/06 15:27:57 by agaley           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ class ScavTrap : public ClapTrap {
   ScavTrap& operator=(const ScavTrap& rhs);
   ~ScavTrap();
 
-  void guardGate();
+  void guardGate() const;
 };
 
 #endif

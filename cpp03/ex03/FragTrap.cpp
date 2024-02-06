@@ -6,7 +6,7 @@
 /*   By: agaley <agaley@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/23 20:31:12 by agaley            #+#    #+#             */
-/*   Updated: 2024/02/06 02:16:55 by agaley           ###   ########lyon.fr   */
+/*   Updated: 2024/02/06 15:26:32 by agaley           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,7 @@ FragTrap& FragTrap::operator=(const FragTrap& rhs) {
   return *this;
 }
 
-void FragTrap::highFivesGuys(void) {
+void FragTrap::highFivesGuys() const {
   std::cout << this->_className << " " << this->_name
             << " is asking for High Five !" << std::endl;
 }

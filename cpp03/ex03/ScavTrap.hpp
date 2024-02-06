@@ -6,7 +6,7 @@
 /*   By: agaley <agaley@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/23 20:31:02 by agaley            #+#    #+#             */
-/*   Updated: 2024/02/06 02:25:37 by agaley           ###   ########lyon.fr   */
+/*   Updated: 2024/02/06 15:27:09 by agaley           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,9 +16,6 @@
 #include "ClapTrap.hpp"
 
 class ScavTrap : virtual public ClapTrap {
- private:
-  void _initStats();
-
  public:
   ScavTrap();
   ScavTrap(const std::string& name);
@@ -27,7 +24,7 @@ class ScavTrap : virtual public ClapTrap {
   ScavTrap& operator=(const ScavTrap& rhs);
   ~ScavTrap();
 
-  void guardGate();
+  void guardGate() const;
 };
 
 #endif
