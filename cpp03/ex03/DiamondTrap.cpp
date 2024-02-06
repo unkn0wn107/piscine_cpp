@@ -25,11 +25,6 @@ DiamondTrap::DiamondTrap(const std::string& name) : ScavTrap(), FragTrap() {
             << " name constructor called." << std::endl;
 }
 
-DiamondTrap::DiamondTrap(std::string& name, int hp, int ep, int ad)
-    : ScavTrap(name, hp, ep, ad + 10), FragTrap(name, hp, ep, ad) {
-  this->_init(name);
-};
-
 void DiamondTrap::_init(const std::string& name) {
   this->_className = "DiamondTrap";
   this->_name = name;
