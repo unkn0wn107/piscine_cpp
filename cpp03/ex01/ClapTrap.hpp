@@ -1,12 +1,13 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ClapTrap.hpp                                       :+:      :+:    :+:   */
+/*   ClapTrap.hpp                                          :+:      :+:    :+:
+ */
 /*                                                    +:+ +:+         +:+     */
 /*   By: agaley <agaley@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/23 20:31:02 by agaley            #+#    #+#             */
-/*   Updated: 2024/02/05 11:19:29 by agaley           ###   ########lyon.fr   */
+/*   Updated: 2024/01/24 00:53:37 by agaley           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +15,11 @@
 #define ClapTrap_H
 
 #include <iostream>
+#include <typeinfo>
 
 class ClapTrap {
- private:
+ protected:
+  std::string  _className;
   std::string  _name;
   unsigned int _hitPoints;
   unsigned int _energyPoints;
