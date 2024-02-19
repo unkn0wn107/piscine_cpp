@@ -6,7 +6,7 @@
 /*   By: agaley <agaley@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/23 20:31:02 by agaley            #+#    #+#             */
-/*   Updated: 2024/02/06 15:43:32 by agaley           ###   ########lyon.fr   */
+/*   Updated: 2024/02/19 14:48:29 by agaley           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
 
 class DiamondTrap : public ScavTrap, public FragTrap {
  private:
-  std::string _className;
+  std::string _name;
   void        _init(const std::string& name);
 
  public:

@@ -1,13 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   DiamondTrap.cpp                                       :+:      :+:    :+:
- */
+/*   DiamondTrap.cpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: agaley <agaley@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/23 20:31:12 by agaley            #+#    #+#             */
-/*   Updated: 2024/02/06 01:14:29 by agaley           ###   ########lyon.fr   */
+/*   Updated: 2024/02/19 14:43:29 by agaley           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,5 +55,5 @@ DiamondTrap& DiamondTrap::operator=(const DiamondTrap& rhs) {
 
 void DiamondTrap::whoAmI() const {
   std::cout << this->_className << " " << this->_name << " has inherited from "
-            << FragTrap::_name << std::endl;
+            << ClapTrap::_name << std::endl;
 }
