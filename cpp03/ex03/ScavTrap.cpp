@@ -6,29 +6,30 @@
 /*   By: agaley <agaley@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/23 20:31:12 by agaley            #+#    #+#             */
-/*   Updated: 2024/02/06 15:27:03 by agaley           ###   ########lyon.fr   */
+/*   Updated: 2024/02/19 21:05:15 by agaley           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ScavTrap.hpp"
 
-ScavTrap::ScavTrap() : ClapTrap("Unkn0wn", 100, 50, 20) {
-  this->_className = "ScavTrap";
-  std::cout << this->_className << " " << this->_name
-            << " default constructor called." << std::endl;
+ScavTrap::ScavTrap()
+    : ClapTrap("Unkn0wn_clap_name") {
+  this->_init();
+  std::cout << "ScavTrap " << this->_name << " default constructor called"
+            << std::endl;
 }
 
-ScavTrap::ScavTrap(const std::string& name) : ClapTrap(name, 100, 50, 20) {
-  this->_className = "ScavTrap";
-  std::cout << this->_className << " " << this->_name
-            << " name constructor called." << std::endl;
+ScavTrap::ScavTrap(const std::string& name)
+    : ClapTrap(name + "_scav_name") {
+  this->_init();
+  std::cout << "ScavTrap " << this->_name << " name constructor called"
+            << std::endl;
 }
 
-ScavTrap::ScavTrap(const std::string& name, int hp, int ep, int ad)
-    : ClapTrap(name, hp, ep, ad) {
-  this->_className = "ScavTrap";
-  std::cout << this->_className << " " << this->_name
-            << " name constructor called." << std::endl;
+void ScavTrap::_init() {
+  this->_hitPoints = 100;
+  this->_energyPoints = 50;
+  this->_attackDamage = 20;
 }
 
 ScavTrap::ScavTrap(const ScavTrap& src) : ClapTrap(src) {
@@ -49,6 +50,21 @@ ScavTrap& ScavTrap::operator=(const ScavTrap& rhs) {
   std::cout << this->_className << " " << this->_name
             << " assignment operator called." << std::endl;
   return *this;
+}
+
+void ScavTrap::attack(const std::string& target) {
+  if (this->_energyPoints == 0) {
+    std::cout << this->_hitPoints << " " << this->_name
+              << " doesn't have energy to attack ..." << std::endl;
+  } else if (this->_hitPoints == 0) {
+    std::cout << this->_className << " " << this->_name << " is dead ..."
+              << std::endl;
+  } else {
+    std::cout << this->_name << " " << this->_name << " attacks " << target
+              << ", causing " << this->_attackDamage << " points of damage!"
+              << std::endl;
+    this->_energyPoints--;
+  }
 }
 
 void ScavTrap::guardGate() const {

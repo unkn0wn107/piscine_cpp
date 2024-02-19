@@ -33,16 +33,6 @@ ClapTrap::ClapTrap(const std::string& name)
             << std::endl;
 }
 
-ClapTrap::ClapTrap(const std::string& name, int hp, int ep, int ad)
-    : _className("ClapTrap"),
-      _name(name + "_clap_name"),
-      _hitPoints(hp),
-      _energyPoints(ep),
-      _attackDamage(ad) {
-  std::cout << "ClapTrap " << this->_name << " name constructor called"
-            << std::endl;
-}
-
 ClapTrap::ClapTrap(const ClapTrap& src) {
   *this = src;
   std::cout << "ClapTrap " << this->_name << " copy constructor called"

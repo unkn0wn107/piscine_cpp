@@ -6,7 +6,7 @@
 /*   By: agaley <agaley@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/23 20:31:02 by agaley            #+#    #+#             */
-/*   Updated: 2024/02/06 15:26:42 by agaley           ###   ########lyon.fr   */
+/*   Updated: 2024/02/19 20:14:38 by agaley           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,10 @@
 #include "ClapTrap.hpp"
 
 class FragTrap : virtual public ClapTrap {
+ private:
+  std::string  _className;
+  void         _init(void);
+
  public:
   FragTrap();
   FragTrap(const std::string& name);
