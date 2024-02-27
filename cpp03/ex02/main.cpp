@@ -6,7 +6,7 @@
 /*   By: agaley <agaley@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/23 20:31:16 by agaley            #+#    #+#             */
-/*   Updated: 2024/02/06 01:31:17 by agaley           ###   ########lyon.fr   */
+/*   Updated: 2024/02/27 03:56:51 by agaley           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,12 +42,15 @@ int main(void) {
   trap3.takeDamage(30);
   trap3.beRepaired(5);
 
-  std::cout << std::endl << "trap3 clones" << std::endl;
-  FragTrap trapCopy = FragTrap(trap3);
-  trapCopy.attack("FT1");
+  std::cout << std::endl << "trap3 clone by copy" << std::endl;
+  FragTrap(trap3).beRepaired(5);
 
-  FragTrap trapAssigned = trap3;
-  trapCopy.attack("FT1");
+  {
+    std::cout << std::endl << "trap3 clone by assignement" << std::endl;
+    FragTrap trapAssigned;
+    trapAssigned = trap3;
+    trapAssigned.beRepaired(5);
+  }
 
   std::cout << std::endl << "Battle finished!" << std::endl;
 

@@ -19,13 +19,15 @@
 
 class ClapTrap {
  private:
-  std::string  _className;
+  std::string _className;
 
  protected:
-  std::string  _name;
-  unsigned int _hitPoints;
-  unsigned int _energyPoints;
-  unsigned int _attackDamage;
+  std::string                _name;
+  unsigned int               _hitPoints;
+  unsigned int               _energyPoints;
+  unsigned int               _attackDamage;
+  virtual const std::string& getClassName() const;
+  virtual const std::string& getName() const;
 
  public:
   ClapTrap();
