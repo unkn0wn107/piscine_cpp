@@ -6,7 +6,7 @@
 /*   By: agaley <agaley@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/23 20:31:12 by agaley            #+#    #+#             */
-/*   Updated: 2024/02/27 22:00:41 by agaley           ###   ########lyon.fr   */
+/*   Updated: 2024/02/27 23:28:46 by agaley           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,10 +18,7 @@ AMateria::AMateria(std::string const& type) : _type(type) {}
 
 AMateria::AMateria(const AMateria& src) : _type(src._type) {}
 
-AMateria& AMateria::operator=(const AMateria& rhs) {
-  if (this != &rhs) {
-    _type = rhs._type;
-  }
+AMateria& AMateria::operator=(const AMateria&) {
   return *this;
 }
 

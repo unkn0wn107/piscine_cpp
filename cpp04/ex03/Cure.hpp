@@ -6,7 +6,7 @@
 /*   By: agaley <agaley@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/23 20:31:12 by agaley            #+#    #+#             */
-/*   Updated: 2024/02/27 17:58:39 by agaley           ###   ########lyon.fr   */
+/*   Updated: 2024/02/27 22:12:20 by agaley           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,8 @@
 class Cure : public AMateria {
  public:
   Cure();
+  Cure(const Cure& other);
+  Cure& operator=(const Cure& other);
   ~Cure();
 
   AMateria* clone() const;
