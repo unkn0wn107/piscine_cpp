@@ -6,20 +6,24 @@
 /*   By: agaley <agaley@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/23 20:31:12 by agaley            #+#    #+#             */
-/*   Updated: 2024/02/27 14:03:11 by agaley           ###   ########lyon.fr   */
+/*   Updated: 2024/02/27 18:24:44 by agaley           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Character.hpp"
 #include "AMateria.hpp"
-#include <iostream>
 
-Character::Character(std::string const & name) : name(name) {
+Character::Character() : _name("Unkn0wn") {
     for (int i = 0; i < 4; ++i)
-        inventory[i] = nullptr;
+        inventory[i] = NULL;
 }
 
-Character::Character(Character const & other) : name(other.name) {
+Character::Character(std::string const& name) : _name(name) {
+    for (int i = 0; i < 4; ++i)
+        inventory[i] = NULL;
+}
+
+Character::Character(Character const & other) : _name(other._name) {
     copyInventoryFrom(other);
 }
 
@@ -29,7 +33,7 @@ Character::~Character() {
 
 Character & Character::operator=(Character const & other) {
     if (this != &other) {
-        name = other.name;
+        _name = other._name;
         clearInventory();
         copyInventoryFrom(other);
     }
@@ -37,45 +41,43 @@ Character & Character::operator=(Character const & other) {
 }
 
 std::string const & Character::getName() const {
-    return name;
+    return _name;
 }
 
 void Character::equip(AMateria* m) {
     for (int i = 0; i < 4; ++i) {
-        if (inventory[i] == nullptr) {
+        if (inventory[i] == NULL) {
             inventory[i] = m;
             break;
         }
     }
 }
 
-void Character::unequip(int idx) {
-    if (idx >= 0 && idx < 4) {
-        inventory[idx] = nullptr;
-    }
+void Character::unequip(int index) {
+    if (index >= 0 && index < 4)
+        inventory[index] = NULL;
 }
 
-void Character::use(int idx, ICharacter& target) {
-    if (idx >= 0 && idx < 4 && inventory[idx] != nullptr) {
-        inventory[idx]->use(target);
-    }
+void Character::use(int index, ICharacter& target) {
+    if (index >= 0 && index < 4 && inventory[index] != NULL)
+        inventory[index]->use(target);
 }
 
 void Character::copyInventoryFrom(const Character & other) {
     for (int i = 0; i < 4; ++i) {
-        if (other.inventory[i] != nullptr) {
+        if (other.inventory[i] != NULL) {
             inventory[i] = other.inventory[i]->clone();
         } else {
-            inventory[i] = nullptr;
+            inventory[i] = NULL;
         }
     }
 }
 
 void Character::clearInventory() {
     for (int i = 0; i < 4; ++i) {
-        if (inventory[i] != nullptr) {
+        if (inventory[i] != NULL) {
             delete inventory[i];
-            inventory[i] = nullptr;
+            inventory[i] = NULL;
         }
     }
 }

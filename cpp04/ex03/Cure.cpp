@@ -6,16 +6,15 @@
 /*   By: agaley <agaley@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/23 20:31:12 by agaley            #+#    #+#             */
-/*   Updated: 2024/02/27 14:02:00 by agaley           ###   ########lyon.fr   */
+/*   Updated: 2024/02/27 17:58:01 by agaley           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Cure.hpp"
-#include <iostream>
 
-Cure::~Cure()
-{
-}
+Cure::Cure() {}
+
+Cure::~Cure() {}
 
 AMateria* Cure::clone() const
 {

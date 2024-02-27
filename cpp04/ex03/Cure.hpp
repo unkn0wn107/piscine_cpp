@@ -6,7 +6,7 @@
 /*   By: agaley <agaley@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/23 20:31:12 by agaley            #+#    #+#             */
-/*   Updated: 2024/02/27 14:01:31 by agaley           ###   ########lyon.fr   */
+/*   Updated: 2024/02/27 17:58:39 by agaley           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,18 +20,11 @@
 class Cure : public AMateria
 {
 public:
-    Cure() : AMateria("cure") {}
-    virtual ~Cure() {}
+    Cure();
+    ~Cure();
 
-    AMateria* clone() const override
-    {
-        return new Cure(*this);
-    }
-
-    void use(ICharacter& target) override
-    {
-        std::cout << "* heals " << target.getName() << "'s wounds *" << std::endl;
-    }
+    AMateria* clone() const;
+    void use(ICharacter& target);
 };
 
 #endif

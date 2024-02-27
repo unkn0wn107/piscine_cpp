@@ -6,28 +6,31 @@
 #    By: agaley <agaley@student.42lyon.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/12/15 15:51:13 by agaley            #+#    #+#              #
-#    Updated: 2024/02/27 07:13:09 by agaley           ###   ########lyon.fr    #
+#    Updated: 2024/02/27 17:04:52 by agaley           ###   ########lyon.fr    #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = Brain
 
-CC = c++
-CFLAGS = -Wall -Wextra -Werror -std=c++98
+CXX = c++
+CXXFLAGS = -Wall -Wextra -Werror -MD -std=c++98
 SRC = main.cpp Cat.cpp Dog.cpp AAnimal.cpp Brain.cpp
-HEADERS := Cat.hpp Dog.hpp AAnimal.hpp Brain.hpp
-OBJ = $(SRC:.cpp=.o)
+OBJ = $(SRC:%.cpp=%.o)
+DEPS = $(SRC:%.cpp=%.d)
 
 all: $(NAME)
 
 $(NAME): $(OBJ)
-	$(CC) $(CFLAGS) $(OBJ) -o $(NAME)
+	$(CXX) $(CXXFLAGS) $(OBJ) -o $(NAME)
 
-%.o: %.cpp $(HEADERS)
-	$(CC) $(CFLAGS) -c $< -o $@
+%.o: %.cpp
+	$(CXX) $(CXXFLAGS) -c $< -o $@
+
+-include $(DEPS)
 
 clean:
 	rm -f $(OBJ)
+	rm -f $(DEPS)
 
 fclean: clean
 	rm -f $(NAME)

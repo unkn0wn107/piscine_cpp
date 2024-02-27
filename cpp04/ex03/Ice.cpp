@@ -6,7 +6,7 @@
 /*   By: agaley <agaley@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/23 20:31:12 by agaley            #+#    #+#             */
-/*   Updated: 2024/02/27 14:01:18 by agaley           ###   ########lyon.fr   */
+/*   Updated: 2024/02/27 17:44:17 by agaley           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,11 @@
 
 Ice::Ice() : AMateria("ice") {}
 
-Ice::Ice(const Ice& other) : AMateria(other.type) {}
+Ice::Ice(const Ice& other) : AMateria(other._type) {}
 
 Ice& Ice::operator=(const Ice& other) {
     if (this != &other) {
-        this->type = other.type;
+        this->_type = other._type;
     }
     return *this;
 }

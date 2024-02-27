@@ -6,7 +6,7 @@
 /*   By: agaley <agaley@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/23 20:31:12 by agaley            #+#    #+#             */
-/*   Updated: 2024/02/27 14:00:59 by agaley           ###   ########lyon.fr   */
+/*   Updated: 2024/02/27 18:04:16 by agaley           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,8 +23,8 @@ public:
     Ice& operator=(const Ice& other);
     virtual ~Ice();
 
-    virtual AMateria* clone() const override;
-    virtual void use(ICharacter& target) override;
+    virtual AMateria* clone() const;
+    virtual void use(ICharacter& target);
 };
 
 #endif
