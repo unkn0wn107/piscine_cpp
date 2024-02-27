@@ -13,18 +13,17 @@
 #ifndef CURE_HPP
 #define CURE_HPP
 
+#include <string>
 #include "AMateria.hpp"
 #include "ICharacter.hpp"
-#include <string>
 
-class Cure : public AMateria
-{
-public:
-    Cure();
-    ~Cure();
+class Cure : public AMateria {
+ public:
+  Cure();
+  ~Cure();
 
-    AMateria* clone() const;
-    void use(ICharacter& target);
+  AMateria* clone() const;
+  void      use(ICharacter& target);
 };
 
 #endif

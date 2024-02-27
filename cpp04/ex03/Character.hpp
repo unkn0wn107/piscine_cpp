@@ -17,25 +17,25 @@
 #include "ICharacter.hpp"
 
 class Character : virtual public ICharacter {
-private:
-    std::string _name;
-    AMateria* inventory[4];
+ private:
+  std::string _name;
+  AMateria*   inventory[4];
 
-public:
-    Character();
-    Character(std::string const & name);
-    Character(Character const & other);
-    ~Character();
-    Character& operator=(Character const & other);
+ public:
+  Character();
+  Character(std::string const& name);
+  Character(Character const& other);
+  ~Character();
+  Character& operator=(Character const& other);
 
-    std::string const & getName() const;
-    void equip(AMateria* m);
-    void unequip(int idx);
-    void use(int idx, ICharacter& target);
+  std::string const& getName() const;
+  void               equip(AMateria* m);
+  void               unequip(int idx);
+  void               use(int idx, ICharacter& target);
 
-private:
-    void copyInventoryFrom(const Character & other);
-    void clearInventory();
+ private:
+  void copyInventoryFrom(const Character& other);
+  void clearInventory();
 };
 
 #endif

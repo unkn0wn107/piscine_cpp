@@ -16,18 +16,18 @@
 #include "IMateriaSource.hpp"
 
 class MateriaSource : public IMateriaSource {
-private:
-    AMateria* _materias[4];
-    int _learnedCount;
+ private:
+  AMateria* _materias[4];
+  int       _learnedCount;
 
-public:
-    MateriaSource();
-    MateriaSource(const MateriaSource& other);
-    MateriaSource& operator=(const MateriaSource& other);
-    virtual ~MateriaSource();
+ public:
+  MateriaSource();
+  MateriaSource(const MateriaSource& other);
+  MateriaSource& operator=(const MateriaSource& other);
+  virtual ~MateriaSource();
 
-    void learnMateria(AMateria*);
-    AMateria* createMateria(std::string const & type);
+  void      learnMateria(AMateria*);
+  AMateria* createMateria(std::string const& type);
 };
 
 #endif
